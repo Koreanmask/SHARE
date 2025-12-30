@@ -4,7 +4,6 @@ on:
   push:
     branches: ["main", "master"]
 
-# Grant GITHUB_TOKEN the permissions to deploy to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -25,10 +24,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
 
       - name: Install dependencies
-        # 'npm ci' requires package-lock.json. Using 'npm install' is safer for initial setup.
         run: npm install
 
       - name: Build
